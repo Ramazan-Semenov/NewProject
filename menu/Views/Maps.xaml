@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="menu.Views.Maps"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+     xmlns:viewmodel="clr-namespace:menu.ViewModel.Maps"
+      xmlns:local="clr-namespace:menu.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <viewmodel:MainWindowsViewModel x:Key="vm1"></viewmodel:MainWindowsViewModel>
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <Binding Source="{StaticResource vm1}" />
+    </UserControl.DataContext>
+
+
+    <Grid Background="Gray" Height="450" VerticalAlignment="Center">
+            <Button Margin="0,0,710,400" Content="Сохранить" Command="{Binding Path=GetCommand}" />
+
+        <StackPanel Margin="150,0,0,0"   >
+            <ItemsControl ItemsSource="{Binding Chromium}" Height="452" Width="647" RenderTransformOrigin="0.5,0.5" >
+                <ItemsControl.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.302"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ItemsControl.RenderTransform>
+            </ItemsControl>
+        </StackPanel>
+    </Grid>
+
+</UserControl>
