@@ -27,7 +27,9 @@
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonCloseMenu">
             <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
         </EventTrigger>
+     
     </Window.Triggers>
+
     <Grid Background="#FFDEDEDE">
         <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010"/>
         <Grid Height="60" VerticalAlignment="Top" Background="#FF5C99D6">
@@ -38,8 +40,8 @@
                 <TextBlock Text="Abel Dutra" VerticalAlignment="Center" FontSize="16"/>
                 <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10">
                     <StackPanel Width="150" Background="Gray">
-                        <Button Content="Settings"/>
-                        <Button Content="Account"/>
+                        <Button x:Name="opendb" Click="opendb_Click" Content="Settings"/>
+                        <Button  Content="Account"/>
                         <Button Content="Close" Command="{Binding Close}"/>
                         <Separator/>
                         <Button Content="Logout"/>

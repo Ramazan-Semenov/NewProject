@@ -15,9 +15,9 @@ namespace menu.ViewModel.Menu
     {
         public ViewModelMenu()
         {
-            Close= new Control.LambdaCommand(OnGetCommandExecuteClose, CanGetCommandExecuteClose);
+            Close = new Control.LambdaCommand(OnGetCommandExecuteClose, CanGetCommandExecuteClose);
+
           
-           
         }
 
         public ICommand Close { get; }

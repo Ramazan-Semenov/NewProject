@@ -35,6 +35,7 @@ namespace menu
             switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
             {
                 case "ItemHome":                    
+
                     GridMain.Children.Add(new Views.Kassa());
                     break;
                 case "ItemCreate":
@@ -56,6 +57,12 @@ namespace menu
         {
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
             ButtonOpenMenu.Visibility = Visibility.Visible;
+        }
+
+        private void opendb_Click(object sender, RoutedEventArgs e)
+        {
+            GridMain.Children.Clear();
+            GridMain.Children.Add(new Views.DBWork());
         }
     }
 }
